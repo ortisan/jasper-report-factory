@@ -23,6 +23,7 @@
 		<commons-lang.version>3.7</commons-lang.version>
 		<jasperreports.version>6.10.0</jasperreports.version>
 		<lombok.version>1.18.12</lombok.version>
+		<jackson.version>2.9.8</jackson.version>
 	</properties>
 
 	<dependencies>
@@ -42,6 +43,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>${commons-lang.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
 
 		<dependency>
