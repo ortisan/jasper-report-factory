@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="teste" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb4fb511-dde1-4f4a-9359-587f0b962a06">
+    #foreach($field in $fields)
+        <field name="$field.fieldName" class="$field.fieldType"/>
+    #end
+    <detail>
+        <band height="500" splitType="Stretch">
+            #foreach($field in $fields)
+                <textField>
+                    #set ($height = $foreach.count * 42)
+                    <reportElement x="98" y="$height" width="100" height="42" uuid="$field.uuid"/>
+                    <textFieldExpression>#[[<![CDATA[$F{]]#$field.fieldName#[[}]]]]#></textFieldExpression>
+                </textField>
+            #end
+        </band>
+    </detail>
+</jasperReport>
